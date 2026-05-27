@@ -9,6 +9,7 @@ import { cn, formatSom } from "@/lib/utils";
 import { Modal } from "@/components/ui/Modal";
 import { Input } from "@/components/ui/Input";
 import { ArrowLeft, Plus, Minus, Trash2, ShoppingCart, Printer, Save, X } from "lucide-react";
+import { SERVICE_PERCENT } from "@/lib/constants";
 import { toast } from "sonner";
 import { Receipt } from "@/components/Receipt";
 
@@ -40,8 +41,6 @@ export function OrderScreen({ tableId, onBack }: OrderScreenProps) {
 
   const waiterId   = useAuthStore((s) => s.waiterId);
   const waiterName = useAuthStore((s) => s.waiterName);
-
-  const SERVICE_PERCENT = 1;
 
   const [activeCategory, setActiveCategory] = useState<string>("asosiy");
   const [showCart,    setShowCart]    = useState(false);

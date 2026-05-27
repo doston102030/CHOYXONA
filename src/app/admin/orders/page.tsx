@@ -44,7 +44,7 @@ export default function OrdersHistoryPage() {
   return (
     <div className="space-y-6 max-w-7xl">
       <div>
-        <h1 className="text-2xl font-bold text-[#E2E8F0]">Zakazlar tarixi</h1>
+        <h1 className="text-2xl font-bold text-[#F1F5F9]">Zakazlar tarixi</h1>
         <p className="text-sm text-[#64748B] mt-1">
           Barcha zakazlarni ko'rish va o'chirish
         </p>
@@ -64,7 +64,7 @@ export default function OrdersHistoryPage() {
           />
         </div>
 
-        <div className="flex gap-1 p-1 bg-[#1A1F2B] border border-[#273244] rounded-xl">
+        <div className="flex gap-1 p-1 bg-[#111D35] border border-[#1E3558] rounded-xl">
           {(["all", "ochiq", "yopildi", "bekor"] as const).map((f) => (
             <button
               key={f}
@@ -72,7 +72,7 @@ export default function OrdersHistoryPage() {
               className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors capitalize ${
                 filter === f
                   ? "bg-[#E2E8F0] text-[#0B0F14]"
-                  : "text-[#94A3B8] hover:text-[#E2E8F0]"
+                  : "text-[#94A3B8] hover:text-[#F1F5F9]"
               }`}
             >
               {f === "all" ? "Hammasi" : f}
@@ -82,14 +82,14 @@ export default function OrdersHistoryPage() {
       </div>
 
       {filtered.length === 0 ? (
-        <div className="text-center py-20 text-[#64748B] bg-[#1A1F2B] border border-[#273244] rounded-2xl">
+        <div className="text-center py-20 text-[#64748B] bg-[#111D35] border border-[#1E3558] rounded-2xl">
           Zakazlar topilmadi
         </div>
       ) : (
-        <div className="bg-[#1A1F2B] border border-[#273244] rounded-2xl overflow-hidden">
+        <div className="bg-[#111D35] border border-[#1E3558] rounded-2xl overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="bg-[#0B0F14] text-[#94A3B8]">
+              <thead className="bg-[#0C1628] text-[#94A3B8]">
                 <tr>
                   <th className="text-left p-3 font-medium">Stol</th>
                   <th className="text-left p-3 font-medium hidden sm:table-cell">
@@ -107,9 +107,9 @@ export default function OrdersHistoryPage() {
                 {filtered.slice(0, 200).map((o) => (
                   <tr
                     key={o.id}
-                    className="border-t border-[#273244] hover:bg-[#0B0F14]/50"
+                    className="border-t border-[#1E3558] hover:bg-[#0C1628]/50"
                   >
-                    <td className="p-3 text-[#E2E8F0] font-medium">{o.tableName}</td>
+                    <td className="p-3 text-[#F1F5F9] font-medium">{o.tableName}</td>
                     <td className="p-3 text-[#94A3B8] hidden sm:table-cell">
                       {o.waiterName || "—"}
                     </td>
@@ -126,7 +126,7 @@ export default function OrdersHistoryPage() {
                       <div className="flex gap-1 justify-end">
                         <button
                           onClick={() => setViewing(o)}
-                          className="p-1.5 text-[#94A3B8] hover:bg-[#0B0F14] rounded-lg"
+                          className="p-1.5 text-[#94A3B8] hover:bg-[#0C1628] rounded-lg"
                           title="Ko'rish"
                         >
                           <Eye size={14} />
@@ -159,7 +159,7 @@ export default function OrdersHistoryPage() {
             </table>
           </div>
           {filtered.length > 200 && (
-            <div className="p-3 text-center text-xs text-[#64748B] border-t border-[#273244]">
+            <div className="p-3 text-center text-xs text-[#64748B] border-t border-[#1E3558]">
               Faqat oxirgi 200 ta zakaz ko'rsatilmoqda
             </div>
           )}
@@ -185,14 +185,14 @@ export default function OrdersHistoryPage() {
                 {viewing.items.map((i) => (
                   <div
                     key={i.id}
-                    className="flex items-center justify-between p-2.5 bg-[#0B0F14] border border-[#273244] rounded-lg text-sm"
+                    className="flex items-center justify-between p-2.5 bg-[#0C1628] border border-[#1E3558] rounded-lg text-sm"
                   >
-                    <span className="text-[#E2E8F0]">{i.productName}</span>
+                    <span className="text-[#F1F5F9]">{i.productName}</span>
                     <div className="text-right">
                       <div className="text-xs text-[#64748B]">
                         {i.weight !== undefined ? `${i.weight} kg` : `${i.quantity} dona`}
                       </div>
-                      <div className="font-semibold text-[#E2E8F0]">
+                      <div className="font-semibold text-[#F1F5F9]">
                         {formatSom(i.subtotal)}
                       </div>
                     </div>
@@ -201,7 +201,7 @@ export default function OrdersHistoryPage() {
               </div>
             </div>
 
-            <div className="p-3 bg-[#0B0F14] border border-[#273244] rounded-xl space-y-1 text-sm">
+            <div className="p-3 bg-[#0C1628] border border-[#1E3558] rounded-xl space-y-1 text-sm">
               <div className="flex justify-between">
                 <span className="text-[#94A3B8]">Mahsulotlar:</span>
                 <span>{formatSom(viewing.subtotal)}</span>
@@ -210,7 +210,7 @@ export default function OrdersHistoryPage() {
                 <span className="text-[#94A3B8]">Xizmat haqi ({viewing.servicePercent}%):</span>
                 <span>{formatSom(viewing.serviceFee)}</span>
               </div>
-              <div className="border-t border-[#273244] pt-1.5 flex justify-between font-semibold">
+              <div className="border-t border-[#1E3558] pt-1.5 flex justify-between font-semibold">
                 <span>Jami:</span>
                 <span className="text-[#22C55E]">{formatSom(viewing.total)}</span>
               </div>
@@ -225,7 +225,7 @@ export default function OrdersHistoryPage() {
 function StatusBadge({ status }: { status: string }) {
   const map: Record<string, string> = {
     ochiq: "bg-[#22C55E]/10 text-[#22C55E] border-[#22C55E]/30",
-    yopildi: "bg-[#64748B]/10 text-[#94A3B8] border-[#273244]",
+    yopildi: "bg-[#64748B]/10 text-[#94A3B8] border-[#1E3558]",
     bekor: "bg-[#EF4444]/10 text-[#EF4444] border-[#EF4444]/30",
   };
   return (
@@ -237,9 +237,9 @@ function StatusBadge({ status }: { status: string }) {
 
 function Info({ label, value }: { label: string; value: string }) {
   return (
-    <div className="p-2.5 bg-[#0B0F14] border border-[#273244] rounded-lg">
+    <div className="p-2.5 bg-[#0C1628] border border-[#1E3558] rounded-lg">
       <div className="text-xs text-[#64748B]">{label}</div>
-      <div className="text-sm text-[#E2E8F0] font-medium mt-0.5">{value}</div>
+      <div className="text-sm text-[#F1F5F9] font-medium mt-0.5">{value}</div>
     </div>
   );
 }

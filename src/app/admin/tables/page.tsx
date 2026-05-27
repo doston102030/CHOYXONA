@@ -36,7 +36,7 @@ export default function TablesPage() {
     <div className="space-y-6 max-w-7xl">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-[#E2E8F0]">Stollar</h1>
+          <h1 className="text-2xl font-bold text-[#F1F5F9]">Stollar</h1>
           <p className="text-sm text-[#64748B] mt-1">
             Xonalar, so'rilar, ustollarni boshqarish
           </p>
@@ -53,7 +53,7 @@ export default function TablesPage() {
             {TYPE_LABEL[group.type]} ({group.items.length})
           </h2>
           {group.items.length === 0 ? (
-            <div className="text-sm text-[#64748B] p-4 bg-[#1A1F2B] border border-[#273244] rounded-xl">
+            <div className="text-sm text-[#64748B] p-4 bg-[#111D35] border border-[#1E3558] rounded-xl">
               Bu turdagi stollar yo'q
             </div>
           ) : (
@@ -61,10 +61,10 @@ export default function TablesPage() {
               {group.items.map((t) => (
                 <div
                   key={t.id}
-                  className="bg-[#1A1F2B] border border-[#273244] rounded-2xl p-3"
+                  className="bg-[#111D35] border border-[#1E3558] rounded-2xl p-3"
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <div className="font-semibold text-[#E2E8F0]">{t.name}</div>
+                    <div className="font-semibold text-[#F1F5F9]">{t.name}</div>
                     <button
                       onClick={() => updateTable(t.id, { isActive: !t.isActive })}
                     >
@@ -78,7 +78,7 @@ export default function TablesPage() {
                   <div className="flex gap-1">
                     <button
                       onClick={() => setEditing(t)}
-                      className="flex-1 p-1.5 text-[#94A3B8] hover:bg-[#0B0F14] rounded-lg"
+                      className="flex-1 p-1.5 text-[#94A3B8] hover:bg-[#0C1628] rounded-lg"
                     >
                       <Pencil size={14} className="mx-auto" />
                     </button>
@@ -172,7 +172,7 @@ function TableFormModal({
                 className={`px-3 py-2 rounded-xl text-sm transition-colors ${
                   type === t
                     ? "bg-[#E2E8F0] text-[#0B0F14] font-medium"
-                    : "bg-[#0B0F14] border border-[#273244] text-[#94A3B8] hover:text-[#E2E8F0]"
+                    : "bg-[#0C1628] border border-[#1E3558] text-[#94A3B8] hover:text-[#F1F5F9]"
                 }`}
               >
                 {TYPE_LABEL[t]}

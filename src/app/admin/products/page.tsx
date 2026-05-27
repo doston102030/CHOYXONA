@@ -37,7 +37,7 @@ export default function ProductsPage() {
     <div className="space-y-6 max-w-7xl">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-[#E2E8F0]">Mahsulotlar</h1>
+          <h1 className="text-2xl font-bold text-[#F1F5F9]">Mahsulotlar</h1>
           <p className="text-sm text-[#64748B] mt-1">Menyuni boshqarish</p>
         </div>
         <Button variant="success" onClick={() => setShowAdd(true)}>
@@ -63,14 +63,14 @@ export default function ProductsPage() {
         {filtered.map((p) => (
           <div
             key={p.id}
-            className="bg-[#1A1F2B] border border-[#273244] rounded-2xl p-4 group"
+            className="bg-[#111D35] border border-[#1E3558] rounded-2xl p-4 group"
           >
             <div className="flex items-start justify-between gap-2 mb-3">
               <div className="min-w-0 flex-1">
                 <div className="text-xs text-[#64748B] mb-1">
                   {CATEGORY_ICONS[p.category]} {CATEGORY_LABELS[p.category]}
                 </div>
-                <div className="font-semibold text-[#E2E8F0] truncate">{p.name}</div>
+                <div className="font-semibold text-[#F1F5F9] truncate">{p.name}</div>
               </div>
               <button
                 onClick={() => updateProduct(p.id, { isActive: !p.isActive })}
@@ -169,7 +169,7 @@ function FilterBtn({
       className={`px-3 py-1.5 rounded-xl text-sm whitespace-nowrap transition-colors ${
         active
           ? "bg-[#E2E8F0] text-[#0B0F14]"
-          : "bg-[#1A1F2B] border border-[#273244] text-[#94A3B8] hover:text-[#E2E8F0]"
+          : "bg-[#111D35] border border-[#1E3558] text-[#94A3B8] hover:text-[#F1F5F9]"
       }`}
     >
       {children}
@@ -236,7 +236,7 @@ function ProductFormModal({
                 className={`px-3 py-2 rounded-xl text-sm transition-colors ${
                   category === c
                     ? "bg-[#E2E8F0] text-[#0B0F14] font-medium"
-                    : "bg-[#0B0F14] border border-[#273244] text-[#94A3B8] hover:text-[#E2E8F0]"
+                    : "bg-[#0C1628] border border-[#1E3558] text-[#94A3B8] hover:text-[#F1F5F9]"
                 }`}
               >
                 <div className="text-base">{CATEGORY_ICONS[c]}</div>
@@ -246,7 +246,7 @@ function ProductFormModal({
           </div>
         </div>
 
-        <label className="flex items-center gap-3 p-3 bg-[#0B0F14] border border-[#273244] rounded-xl cursor-pointer">
+        <label className="flex items-center gap-3 p-3 bg-[#0C1628] border border-[#1E3558] rounded-xl cursor-pointer">
           <input
             type="checkbox"
             checked={isVariableWeight}
@@ -254,7 +254,7 @@ function ProductFormModal({
             className="w-4 h-4 accent-[#22C55E]"
           />
           <div className="flex-1">
-            <div className="text-sm text-[#E2E8F0] font-medium">
+            <div className="text-sm text-[#F1F5F9] font-medium">
               Kg bo'yicha sotiladi
             </div>
             <div className="text-xs text-[#64748B]">

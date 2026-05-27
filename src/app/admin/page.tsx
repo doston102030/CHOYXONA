@@ -121,13 +121,13 @@ export default function AdminDashboard() {
     <div className="space-y-6 max-w-7xl">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-[#E2E8F0]">Hisobot</h1>
+          <h1 className="text-2xl font-bold text-[#F1F5F9]">Hisobot</h1>
           <p className="text-sm text-[#64748B] mt-1">
             Sohil choyxona savdo statistikasi
           </p>
         </div>
 
-        <div className="flex gap-1 p-1 bg-[#1A1F2B] border border-[#273244] rounded-xl">
+        <div className="flex gap-1 p-1 bg-[#111D35] border border-[#1E3558] rounded-xl">
           {(["kunlik", "oylik", "yillik"] as Period[]).map((p) => (
             <button
               key={p}
@@ -136,7 +136,7 @@ export default function AdminDashboard() {
                 "px-4 py-1.5 rounded-lg text-sm font-medium transition-colors capitalize",
                 period === p
                   ? "bg-[#E2E8F0] text-[#0B0F14]"
-                  : "text-[#94A3B8] hover:text-[#E2E8F0]"
+                  : "text-[#94A3B8] hover:text-[#F1F5F9]"
               )}
             >
               {p}
@@ -171,10 +171,10 @@ export default function AdminDashboard() {
       </div>
 
       {/* Chart */}
-      <div className="bg-[#1A1F2B] border border-[#273244] rounded-2xl p-4 md:p-6">
+      <div className="bg-[#111D35] border border-[#1E3558] rounded-2xl p-4 md:p-6">
         <div className="flex items-center gap-2 mb-4">
           <Calendar size={16} className="text-[#94A3B8]" />
-          <h2 className="font-semibold text-[#E2E8F0]">
+          <h2 className="font-semibold text-[#F1F5F9]">
             {period === "yillik" ? "Oylik" : "Kunlik"} dinamika
           </h2>
         </div>
@@ -206,8 +206,8 @@ export default function AdminDashboard() {
 
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Mahsulot bo'yicha */}
-        <div className="bg-[#1A1F2B] border border-[#273244] rounded-2xl p-4 md:p-6">
-          <h2 className="font-semibold text-[#E2E8F0] mb-4">Eng ko'p sotilganlar</h2>
+        <div className="bg-[#111D35] border border-[#1E3558] rounded-2xl p-4 md:p-6">
+          <h2 className="font-semibold text-[#F1F5F9] mb-4">Eng ko'p sotilganlar</h2>
           {stats.productStats.length === 0 ? (
             <div className="text-center py-8 text-[#64748B]">Hali sotuvlar yo'q</div>
           ) : (
@@ -215,13 +215,13 @@ export default function AdminDashboard() {
               {stats.productStats.slice(0, 10).map((p, i) => (
                 <div
                   key={p.name}
-                  className="flex items-center gap-3 p-3 bg-[#0B0F14] border border-[#273244] rounded-xl"
+                  className="flex items-center gap-3 p-3 bg-[#0C1628] border border-[#1E3558] rounded-xl"
                 >
                   <div className="w-6 text-center text-[#64748B] text-sm font-mono">
                     {i + 1}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-[#E2E8F0] truncate">
+                    <div className="font-medium text-[#F1F5F9] truncate">
                       {p.name}
                     </div>
                     <div className="text-xs text-[#64748B]">
@@ -238,8 +238,8 @@ export default function AdminDashboard() {
         </div>
 
         {/* Stol bo'yicha */}
-        <div className="bg-[#1A1F2B] border border-[#273244] rounded-2xl p-4 md:p-6">
-          <h2 className="font-semibold text-[#E2E8F0] mb-4">Stollar bo'yicha</h2>
+        <div className="bg-[#111D35] border border-[#1E3558] rounded-2xl p-4 md:p-6">
+          <h2 className="font-semibold text-[#F1F5F9] mb-4">Stollar bo'yicha</h2>
           {stats.tableStats.length === 0 ? (
             <div className="text-center py-8 text-[#64748B]">Hali sotuvlar yo'q</div>
           ) : (
@@ -247,13 +247,13 @@ export default function AdminDashboard() {
               {stats.tableStats.map((t, i) => (
                 <div
                   key={t.name}
-                  className="flex items-center gap-3 p-3 bg-[#0B0F14] border border-[#273244] rounded-xl"
+                  className="flex items-center gap-3 p-3 bg-[#0C1628] border border-[#1E3558] rounded-xl"
                 >
                   <div className="w-6 text-center text-[#64748B] text-sm font-mono">
                     {i + 1}
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium text-[#E2E8F0]">{t.name}</div>
+                    <div className="font-medium text-[#F1F5F9]">{t.name}</div>
                     <div className="text-xs text-[#64748B]">{t.orders} ta zakaz</div>
                   </div>
                   <div className="text-sm font-semibold text-[#22C55E]">
@@ -267,8 +267,8 @@ export default function AdminDashboard() {
       </div>
 
       {/* Shashlik bo'yicha (alohida) */}
-      <div className="bg-[#1A1F2B] border border-[#273244] rounded-2xl p-4 md:p-6">
-        <h2 className="font-semibold text-[#E2E8F0] mb-1">🍢 Shashlik — stol bo'yicha</h2>
+      <div className="bg-[#111D35] border border-[#1E3558] rounded-2xl p-4 md:p-6">
+        <h2 className="font-semibold text-[#F1F5F9] mb-1">🍢 Shashlik — stol bo'yicha</h2>
         <p className="text-xs text-[#64748B] mb-4">
           Bugun (yoki tanlangan davrda) qaysi stolga qancha shashlik sotilgan
         </p>
@@ -278,7 +278,7 @@ export default function AdminDashboard() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-[#273244] text-[#94A3B8]">
+                <tr className="border-b border-[#1E3558] text-[#94A3B8]">
                   <th className="text-left p-2 font-medium">Stol</th>
                   <th className="text-right p-2 font-medium">Qiyma</th>
                   <th className="text-right p-2 font-medium">Go'sht</th>
@@ -293,8 +293,8 @@ export default function AdminDashboard() {
                   const qoy = items["Qo'y go'shti shashlik"] || 0;
                   const total = qiyma + gosht + qoy;
                   return (
-                    <tr key={table} className="border-b border-[#273244]/50">
-                      <td className="p-2 text-[#E2E8F0]">{table}</td>
+                    <tr key={table} className="border-b border-[#1E3558]/50">
+                      <td className="p-2 text-[#F1F5F9]">{table}</td>
                       <td className="p-2 text-right">{qiyma || "—"}</td>
                       <td className="p-2 text-right">{gosht || "—"}</td>
                       <td className="p-2 text-right">{qoy || "—"}</td>
@@ -311,8 +311,8 @@ export default function AdminDashboard() {
       </div>
 
       {/* Oxirgi zakazlar */}
-      <div className="bg-[#1A1F2B] border border-[#273244] rounded-2xl p-4 md:p-6">
-        <h2 className="font-semibold text-[#E2E8F0] mb-4">Oxirgi yopilgan zakazlar</h2>
+      <div className="bg-[#111D35] border border-[#1E3558] rounded-2xl p-4 md:p-6">
+        <h2 className="font-semibold text-[#F1F5F9] mb-4">Oxirgi yopilgan zakazlar</h2>
         {filteredOrders.length === 0 ? (
           <div className="text-center py-8 text-[#64748B]">Zakazlar yo'q</div>
         ) : (
@@ -320,10 +320,10 @@ export default function AdminDashboard() {
             {filteredOrders.slice(0, 20).map((o) => (
               <div
                 key={o.id}
-                className="flex items-center gap-3 p-3 bg-[#0B0F14] border border-[#273244] rounded-xl"
+                className="flex items-center gap-3 p-3 bg-[#0C1628] border border-[#1E3558] rounded-xl"
               >
                 <div className="flex-1 min-w-0">
-                  <div className="font-medium text-[#E2E8F0]">{o.tableName}</div>
+                  <div className="font-medium text-[#F1F5F9]">{o.tableName}</div>
                   <div className="text-xs text-[#64748B]">
                     {o.items.length} mahsulot · {format(new Date(o.closedAt || o.createdAt), "dd.MM HH:mm")}
                   </div>
@@ -344,7 +344,7 @@ function StatCard({
   icon,
   label,
   value,
-  color = "text-[#E2E8F0]",
+  color = "text-[#F1F5F9]",
 }: {
   icon: React.ReactNode;
   label: string;
@@ -352,7 +352,7 @@ function StatCard({
   color?: string;
 }) {
   return (
-    <div className="bg-[#1A1F2B] border border-[#273244] rounded-2xl p-4">
+    <div className="bg-[#111D35] border border-[#1E3558] rounded-2xl p-4">
       <div className="flex items-center gap-2 text-[#94A3B8] text-xs mb-2">
         {icon}
         <span>{label}</span>

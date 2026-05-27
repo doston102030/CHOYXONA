@@ -22,7 +22,7 @@ export default function WaitersPage() {
     <div className="space-y-6 max-w-4xl">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-[#E2E8F0]">Ofitsiantlar</h1>
+          <h1 className="text-2xl font-bold text-[#F1F5F9]">Ofitsiantlar</h1>
           <p className="text-sm text-[#64748B] mt-1">
             Ofitsiantlar 4 raqamli PIN bilan tizimga kiradi
           </p>
@@ -34,7 +34,7 @@ export default function WaitersPage() {
       </div>
 
       {waiters.length === 0 ? (
-        <div className="text-center py-20 text-[#64748B] bg-[#1A1F2B] border border-[#273244] rounded-2xl">
+        <div className="text-center py-20 text-[#64748B] bg-[#111D35] border border-[#1E3558] rounded-2xl">
           <User size={40} className="mx-auto mb-3 opacity-30" />
           Hali ofitsiantlar qo'shilmagan
         </div>
@@ -43,11 +43,11 @@ export default function WaitersPage() {
           {waiters.map((w) => (
             <div
               key={w.id}
-              className="bg-[#1A1F2B] border border-[#273244] rounded-2xl p-4"
+              className="bg-[#111D35] border border-[#1E3558] rounded-2xl p-4"
             >
               <div className="flex items-start justify-between mb-3">
                 <div>
-                  <div className="font-semibold text-[#E2E8F0]">{w.name}</div>
+                  <div className="font-semibold text-[#F1F5F9]">{w.name}</div>
                   <div className="text-xs text-[#64748B] mt-1">
                     PIN: <span className="font-mono text-[#94A3B8]">{w.pin}</span>
                   </div>
