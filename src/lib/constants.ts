@@ -32,7 +32,7 @@ export const DEFAULT_TABLES: Table[] = [
     isActive: true,
     order: i + 1,
   })),
-  ...Array.from({ length: 11 }, (_, i) => ({
+  ...Array.from({ length: 12 }, (_, i) => ({
     id: `t-sori-${i + 1}`,
     name: `So'ri ${i + 1}`,
     type: "sori" as const,

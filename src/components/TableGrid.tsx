@@ -21,10 +21,10 @@ const TYPE_ICON = {
 
 // Section header ranglari (faqat sarlavha uchun)
 const TYPE_SECTION_COLOR: Record<Table["type"], { icon: string; text: string; badge: string }> = {
-  sori:  { icon: "text-[#60A5FA]", text: "text-[#60A5FA]", badge: "bg-[#0D1F40] border-[#1E3A6A]" },
-  oddiy: { icon: "text-[#C084FC]", text: "text-[#C084FC]", badge: "bg-[#180D3A] border-[#3A1A6A]" },
-  katta: { icon: "text-[#FCD34D]", text: "text-[#FCD34D]", badge: "bg-[#251500] border-[#5A3A00]" },
-  ustol: { icon: "text-[#2DD4BF]", text: "text-[#2DD4BF]", badge: "bg-[#001A20] border-[#004A5A]" },
+  sori:  { icon: "text-[#F87171]", text: "text-[#F87171]", badge: "bg-[#2D0A0A] border-[#7F1D1D]" },
+  oddiy: { icon: "text-[#F87171]", text: "text-[#F87171]", badge: "bg-[#2D0A0A] border-[#7F1D1D]" },
+  katta: { icon: "text-[#F87171]", text: "text-[#F87171]", badge: "bg-[#2D0A0A] border-[#7F1D1D]" },
+  ustol: { icon: "text-[#F87171]", text: "text-[#F87171]", badge: "bg-[#2D0A0A] border-[#7F1D1D]" },
 };
 
 const TYPE_ORDER: Table["type"][] = ["sori", "oddiy", "katta", "ustol"];
@@ -64,7 +64,7 @@ export function TableGrid({ onTableClick }: TableGridProps) {
                 {TYPE_LABEL[group.type]}
               </h2>
               {occupied > 0 && (
-                <span className="px-2.5 py-0.5 rounded-full bg-[#22C55E]/15 border border-[#22C55E]/30 text-[#22C55E] text-xs font-bold">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#F87171]/10 border border-[#F87171]/30 text-[#F87171] text-xs font-bold">
                   {occupied} band
                 </span>
               )}
