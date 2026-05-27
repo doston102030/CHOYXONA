@@ -3,12 +3,10 @@
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { useAuthStore } from "@/store/useAuthStore";
 import {
   LayoutDashboard,
   Package,
   Sofa,
-  LogOut,
   Menu,
   X,
   Users,
@@ -27,7 +25,6 @@ const NAV = [
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
-  const { isAuthed, logoutAdmin } = useAuthStore();
   const [mounted, setMounted] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -35,20 +32,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (mounted && !isAuthed && pathname !== "/admin/login") {
-      router.replace("/admin/login");
-    }
-  }, [mounted, isAuthed, pathname, router]);
-
   if (!mounted) return null;
-  if (pathname === "/admin/login") return <>{children}</>;
-  if (!isAuthed) return null;
+  if (pathname === "/admin/login") {
+    router.replace("/admin");
+    return null;
+  }
 
-  const handleLogout = () => {
-    logoutAdmin();
-    router.push("/");
-  };
 
   return (
     <div className="min-h-screen bg-[#0B0F14] flex">
@@ -88,13 +77,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           >
             ← Ofitsiant ekrani
           </Link>
-          <button
-            onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-[#EF4444] hover:bg-[#EF4444]/10"
-          >
-            <LogOut size={16} />
-            Chiqish
-          </button>
         </div>
       </aside>
 
@@ -157,12 +139,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               >
                 ← Ofitsiant ekrani
               </Link>
-              <button
-                onClick={handleLogout}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-[#EF4444] hover:bg-[#EF4444]/10"
-              >
-                <LogOut size={16} /> Chiqish
-              </button>
             </div>
           </aside>
         </div>
